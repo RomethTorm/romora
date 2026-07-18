@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ROMORA Kirjastus | Lugudel on jõud</title>
+
+  <meta name="description" content="ROMORA Kirjastus – raamatute kirjastamine, toimetamine, küljendamine, kaanekujundus ja reklaamilahendused.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #080808;
+      color: #f5f0e6;
+      line-height: 1.7;
+    }
+
+    /* NAVIGATSIOON */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5, 5, 5, 0.96);
+      border-bottom: 1px solid #8c6b28;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      color: #d4af37;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 4px;
+    }
+
+    nav a {
+      color: #e7d8ae;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    /* AVALEHT */
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+
+      background:
+        radial-gradient(circle at center,
+        rgba(90, 65, 20, 0.35),
+        rgba(0, 0, 0, 0.95));
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .symbol {
+      font-size: 65px;
+      color: #d4af37;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(55px, 10vw, 110px);
+      letter-spacing: 12px;
+      color: #d4af37;
+      line-height: 1;
+    }
+
+    .subtitle {
+      margin-top: 15px;
+      font-size: 21px;
+      letter-spacing: 7px;
+      color: #c8aa64;
+    }
+
+    .slogan {
+      margin: 35px 0;
+      font-size: 27px;
+      font-style: italic;
+      color: #ffffff;
+    }
+
+    .hero-text {
+      max-width: 680px;
+      margin: auto;
+      color: #cfc8b8;
+      font-size: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 14px 32px;
+      border: 1px solid #d4af37;
+      color: #d4af37;
+      text-decoration: none;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: #d4af37;
+      color: #080808;
+    }
+
+    /* ÜLDINE */
+
+    section {
+      padding: 90px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #d4af37;
+      font-size: 38px;
+      margin-bottom: 15px;
+      letter-spacing: 3px;
+    }
+
+    .section-intro {
+      max-width: 750px;
+      margin: 0 auto 55px;
+      text-align: center;
+      color: #aaa393;
+    }
+
+    /* TEENUSED */
+
+    .services {
+      background: #0d0d0d;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .service-card {
+      border: 1px solid #55431e;
+      padding: 35px 25px;
+      background: #111;
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: #d4af37;
+    }
+
+    .service-card h3 {
+      color: #d4af37;
+      margin-bottom: 15px;
+      font-size: 21px;
+    }
+
+    .service-card p {
+      color: #bcb5a5;
+    }
+
+    /* MEIST */
+
+    .about {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about p {
+      color: #c8c0af;
+      font-size: 18px;
+    }
+
+    /* KONTAKT */
+
+    .contact {
+      background:
+        linear-gradient(
+          rgba(10,10,10,0.95),
+          rgba(10,10,10,0.95)
+        );
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      border: 1px solid #7c6028;
+      padding: 45px 25px;
+    }
+
+    .contact-item {
+      margin: 15px 0;
+      font-size: 19px;
+    }
+
+    .contact-item a {
+      color: #d4af37;
+      text-decoration: none;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 35px 20px;
+      text-align: center;
+      border-top: 1px solid #44371e;
+      color: #777;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: #b89643;
+    }
+
+    @media (max-width: 700px) {
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 13px;
+      }
+
+      h1 {
+        letter-spacing: 6px;
+      }
+
+      .subtitle {
+        letter-spacing: 4px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MENÜÜ -->
+
+  <nav>
+    <div class="nav-logo">ROMORA</div>
+
+    <div>
+      <a href="#avaleht">Avaleht</a>
+      <a href="#teenused">Teenused</a>
+      <a href="#meist">Meist</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+  </nav>
+
+
+  <!-- AVALEHT -->
+
+  <header class="hero" id="avaleht">
+
+    <div class="hero-content">
+
+      <div class="symbol">♛</div>
+
+      <h1>ROMORA</h1>
+
+      <div class="subtitle">
+        KIRJASTUS
+      </div>
+
+      <div class="slogan">
+        „Lugudel on jõud.“
+      </div>
+
+      <p class="hero-text">
+        Anname lugudele kuju, sõnadele jõu ja ideedele nähtavuse.
+        ROMORA ühendab kirjastamise, kujunduse ja reklaami,
+        et head lood jõuaksid oma lugejateni.
+      </p>
+
+      <a href="#teenused" class="button">
+        AVASTA MEIE TEENUSED
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- TEENUSED -->
+
+  <section class="services" id="teenused">
+
+    <h2 class="section-title">
+      Meie teenused
+    </h2>
+
+    <p class="section-intro">
+      Aitame viia idee käsikirjast valmis teoseni
+      ning luua sellele professionaalse ja nähtava väljundi.
+    </p>
+
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <h3>Raamatute kirjastamine</h3>
+        <p>
+          Aitame autoril liikuda käsikirjast valmis raamatuni
+          ning leida teosele sobiva kirjastusliku lahenduse.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <h3>Toimetamine</h3>
+        <p>
+          Teksti keeleline ja sisuline viimistlemine,
+          et mõte oleks selge ning tekst professionaalne.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <h3>Küljendamine</h3>
+        <p>
+          Raamatu sisu professionaalne paigutus
+          ja ettevalmistamine trükiks või digitaalseks väljaandeks.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <h3>Kaanekujundus</h3>
+        <p>
+          Loome raamatule visuaalse identiteedi,
+          mis toetab teose sisu ja köidab lugeja tähelepanu.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <h3>Reklaam ja turundus</h3>
+        <p>
+          Aitame luua reklaamilahendusi ja kampaaniaid,
+          mis annavad raamatutele, autoritele ja ideedele nähtavuse.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <h3>Loovlahendused</h3>
+        <p>
+          Kujundus, tekstid ja loomingulised lahendused
+          projektidele, mis vajavad tugevat lugu
+          ja selget visuaalset identiteeti.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MEIST -->
+
+  <section id="meist">
+
+    <div class="about">
+
+      <h2 class="section-title">
+        ROMORA
+      </h2>
+
+      <p>
+        ROMORA on loominguline kirjastus ja loovstuudio,
+        mille keskmes on lood, inimesed ja ideed.
+        Usume, et igal heal lool on jõud midagi muuta,
+        kedagi puudutada või jätta endast jälg.
+        <br><br>
+        Meie eesmärk on aidata autoritel ja loojatel
+        muuta oma ideed professionaalseks tervikuks –
+        alates tekstist ja kujundusest kuni
+        valmis teose ning selle tutvustamiseni.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- KONTAKT -->
+
+  <section class="contact" id="kontakt">
+
+    <h2 class="section-title">
+      Võta ühendust
+    </h2>
+
+    <p class="section-intro">
+      Sul on käsikiri, raamatuidee või vajad abi
+      kujunduse ja reklaamiga? Räägime sellest.
+    </p>
+
+
+    <div class="contact-box">
+
+      <div class="contact-item">
+        <strong>ROMORA Kirjastus</strong>
+      </div>
+
+      <div class="contact-item">
+        Telefon:
+        <a href="tel:+37254175184">
+          +372 5417 5184
+        </a>
+      </div>
+
+      <div class="contact-item">
+        E-post:
+        <a href="mailto:kirjastus@romora.ee">
+          kirjastus@romora.ee
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      © 2026 <strong>ROMORA Kirjastus</strong>.
+      Kõik õigused kaitstud.
+    </p>
+
+    <p>
+      Lugudel on jõud.
+    </p>
+
+  </footer>
+
+</body>
+</html>
