@@ -273,10 +273,12 @@
    <div class="nav-logo"></div>
 
     <div>
-      <a href="#avaleht">Avaleht</a>
-      <a href="#teenused">Teenused</a>
-      <a href="#meist">Meist</a>
-      <a href="#kontakt">Kontakt</a>
+    <a href="#avaleht">Avaleht</a>
+<a href="#teenused">Teenused</a>
+<a href="#raamatud">Raamatud</a>
+<a href="#tood">Tehtud tööd</a>
+<a href="#meist">Meist</a>
+<a href="#kontakt">Kontakt</a>
     </div>
   </nav>
 
@@ -316,7 +318,19 @@
     </div>
 
   </header>
+<section class="news-banner">
 
+    <div class="news-content">
+
+        📚 <strong>Uudis:</strong> "Trellide taga: Eesti vangla lood" on saadaval Apollos, Rahva Raamatus ja Storytelis.
+
+        <span class="divider">|</span>
+
+        🇷🇺 Hetkel valmib vene keelne väljaanne <strong>„За решёткой: истории эстонской тюрьмы“</strong>, mis on planeeritud ilmuma 2026. aasta septembris.
+
+    </div>
+
+</section>
 
   <!-- TEENUSED -->
 
@@ -436,9 +450,57 @@
 
     <div class="contact-box">
 
-      <div class="contact-item">
+    <div class="contact-item">
         <strong>ROMORA Kirjastus</strong>
-      </div>
+    </div>
+
+    <div class="contact-item">
+        Telefon:
+        <a href="tel:+37254175184">
+            +372 5417 5184
+        </a>
+    </div>
+
+    <div class="contact-item">
+        E-post:
+        <a href="mailto:info@romora.ee">
+            info@romora.ee
+        </a>
+    </div>
+
+    <div class="contact-item">
+        või
+        <a href="mailto:kirjastus@romora.ee">
+            kirjastus@romora.ee
+        </a>
+    </div>
+
+    <br><br>
+
+    <form class="contact-form">
+
+        <input
+            type="text"
+            placeholder="Sinu nimi"
+            required>
+
+        <input
+            type="email"
+            placeholder="E-posti aadress"
+            required>
+
+        <textarea
+            placeholder="Sinu sõnum..."
+            rows="6"
+            required></textarea>
+
+        <button type="submit">
+            SAADA
+        </button>
+
+    </form>
+
+</div>
 
       <div class="contact-item">
         Telefon:
@@ -451,6 +513,9 @@
         E-post:
         <a href="mailto:kirjastus@romora.ee">
           kirjastus@romora.ee
+           <a href="mailto:info@romora.ee">
+          info@romora.ee
+      
         </a>
       </div>
 
@@ -475,4 +540,56 @@
   </footer>
 
 </body>
-</html>
+</html>.news-banner{
+
+background:#b88a1d;
+
+padding:14px;
+
+text-align:center;
+
+font-size:16px;
+
+color:#fff;
+
+font-weight:500;
+
+letter-spacing:.4px;
+
+}
+
+.news-content{
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+.divider{
+
+padding:0 15px;
+
+opacity:.5;
+
+}
+
+@media(max-width:700px){
+
+.news-banner{
+
+font-size:14px;
+
+line-height:1.7;
+
+padding:18px;
+
+}
+
+.divider{
+
+display:none;
+
+}
+
+}
