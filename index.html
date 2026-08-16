@@ -75,39 +75,40 @@
       line-height: 1.7;
     }
 
-    /* NAVIGATSIOON */
+  /* NAVIGATSIOON */
 
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(5, 5, 5, 0.96);
-      border-bottom: 1px solid #8c6b28;
-      padding: 18px 8%;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(5, 5, 5, 0.96);
+  border-bottom: 1px solid #8c6b28;
+  padding: 18px 8%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 
-    .nav-logo {
-      color: #d4af37;
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 4px;
-    }
+.nav-logo {
+  color: #d4af37;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
 
-    nav a {
-      color: #e7d8ae;
-      text-decoration: none;
-      margin-left: 25px;
-      font-size: 15px;
-    }
+nav a {
+  color: #e7d8ae;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 15px;
+}
 
-    nav a:hover {
-      color: #d4af37;
-    }
+nav a:hover {
+  color: #d4af37;
+}
 
-    /* AVALEHT */
+
+/* AVALEHT */
 
 .hero {
   position: relative;
@@ -128,177 +129,95 @@
 }
 
 
-/* KULDSED LIIKUVAD LAINED */
+/* VIDEO TAUST */
 
-.hero-animation {
-  position:absolute;
-  inset:0;
-  overflow:hidden;
-  pointer-events:none;
-  z-index:0;
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 
-.hero-animation::before {
+/* TUME KIHT VIDEO PEALE */
 
-  content:"";
-
-  position:absolute;
-
-  width:1200px;
-  height:700px;
-
-  top:50%;
-  left:-70%;
-
-  background:
-    linear-gradient(
-      120deg,
-      transparent 0%,
-      rgba(212,175,55,0.08) 25%,
-      rgba(255,220,120,0.45) 45%,
-      rgba(212,175,55,0.18) 60%,
-      transparent 100%
-    );
-
-  filter:blur(45px);
-
-  transform:rotate(-15deg);
-
-  animation:romoraWave 14s ease-in-out infinite;
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
 }
 
 
+/* SISU VIDEO PEALE */
 
-.hero-animation::after {
-
-  content:"";
-
-  position:absolute;
-
-  width:900px;
-  height:500px;
-
-  top:35%;
-  left:-80%;
-
-
-  background:
-    linear-gradient(
-      120deg,
-      transparent,
-      rgba(212,175,55,0.25),
-      transparent
-    );
-
-
-  filter:blur(55px);
-
-  transform:rotate(-15deg);
-
-  animation:romoraWaveSecond 18s ease-in-out infinite;
-
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  width: 100%;
 }
 
 
-
-@keyframes romoraWave {
-
-  0% {
-    transform:translateX(0) rotate(-15deg);
-    opacity:0.2;
-  }
-
-
-  50% {
-    transform:translateX(140%) rotate(-15deg);
-    opacity:1;
-  }
-
-
-  100% {
-    transform:translateX(280%) rotate(-15deg);
-    opacity:0.2;
-  }
-
+.symbol {
+  font-size: 65px;
+  color: #d4af37;
+  margin-bottom: 15px;
 }
 
 
-
-@keyframes romoraWaveSecond {
-
-  0% {
-    transform:translateX(0) rotate(-15deg);
-    opacity:0.1;
-  }
-
-
-  50% {
-    transform:translateX(180%) rotate(-15deg);
-    opacity:0.6;
-  }
-
-
-  100% {
-    transform:translateX(360%) rotate(-15deg);
-    opacity:0.1;
-  }
-
+h1 {
+  font-size: clamp(55px, 10vw, 110px);
+  letter-spacing: 12px;
+  color: #d4af37;
+  line-height: 1;
 }
-    .hero-content {
-      max-width: 900px;
-    }
 
-    .symbol {
-      font-size: 65px;
-      color: #d4af37;
-      margin-bottom: 15px;
-    }
 
-    h1 {
-      font-size: clamp(55px, 10vw, 110px);
-      letter-spacing: 12px;
-      color: #d4af37;
-      line-height: 1;
-    }
+.subtitle {
+  margin-top: 15px;
+  font-size: 21px;
+  letter-spacing: 7px;
+  color: #c8aa64;
+}
 
-    .subtitle {
-      margin-top: 15px;
-      font-size: 21px;
-      letter-spacing: 7px;
-      color: #c8aa64;
-    }
 
-    .slogan {
-      margin: 35px 0;
-      font-size: 27px;
-      font-style: italic;
-      color: #ffffff;
-    }
+.slogan {
+  margin: 35px 0;
+  font-size: 27px;
+  font-style: italic;
+  color: #ffffff;
+}
 
-    .hero-text {
-      max-width: 680px;
-      margin: auto;
-      color: #cfc8b8;
-      font-size: 18px;
-    }
 
-    .button {
-      display: inline-block;
-      margin-top: 35px;
-      padding: 14px 32px;
-      border: 1px solid #d4af37;
-      color: #d4af37;
-      text-decoration: none;
-      letter-spacing: 2px;
-      transition: 0.3s;
-    }
+.hero-text {
+  max-width: 680px;
+  margin: auto;
+  color: #cfc8b8;
+  font-size: 18px;
+}
 
-    .button:hover {
-      background: #d4af37;
-      color: #080808;
-    }
 
+.button {
+  display: inline-block;
+  margin-top: 35px;
+  padding: 14px 32px;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+
+.button:hover {
+  background: #d4af37;
+  color: #080808;
+}
     /* ÜLDINE */
 
     section {
@@ -461,7 +380,7 @@
   <source src="romora-bg.mp4.mp4" type="video/mp4">
 </video>
 
-<div class="hero-overlay"></div>
+
 
 <div class="hero-content">
   
