@@ -351,6 +351,43 @@ h1 {
         font-size: 16px;
       }
     }
+ /* RAAMATU SUURVAATE KUJUNDUS */
+
+#bookViewer {
+
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.92);
+
+  justify-content:center;
+  align-items:center;
+
+  z-index:9999;
+
+}
+
+
+#bigBookCover {
+
+  max-width:90%;
+  max-height:90%;
+
+}
+
+
+.close-book {
+
+  position:absolute;
+  top:20px;
+  right:35px;
+
+  font-size:50px;
+  color:#d4af37;
+
+  cursor:pointer;
+
+}
   </style>
 </head>
 
@@ -781,3 +818,32 @@ class="book-cover"
   </p>
 
 </footer>
+<!-- RAAMATU SUURVAATE AKEN -->
+
+<div id="bookViewer" onclick="closeBook()">
+
+  <span class="close-book">&times;</span>
+
+  <img id="bigBookCover">
+
+</div>
+
+
+<script>
+
+function openBook(src){
+
+  document.getElementById("bookViewer").style.display="flex";
+
+  document.getElementById("bigBookCover").src = src;
+
+}
+
+
+function closeBook(){
+
+  document.getElementById("bookViewer").style.display="none";
+
+}
+
+</script>
