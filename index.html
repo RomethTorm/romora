@@ -109,19 +109,57 @@
 
     /* AVALEHT */
 
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 20px;
+  .hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
 
-      background:
-        radial-gradient(circle at center,
-        rgba(90, 65, 20, 0.35),
-        rgba(0, 0, 0, 0.95));
-    }
+  background:
+    radial-gradient(circle at center,
+    rgba(90, 65, 20, 0.35),
+    rgba(0, 0, 0, 0.95));
+}
+
+
+.hero-animation {
+  position:absolute;
+  top:0;
+  left:-50%;
+  width:200%;
+  height:100%;
+
+  background:
+  radial-gradient(circle,
+  rgba(212,175,55,0.30),
+  transparent 35%);
+
+  animation: moveLight 12s infinite alternate;
+  z-index:0;
+}
+
+
+.hero-content {
+  position:relative;
+  z-index:2;
+}
+
+
+@keyframes moveLight {
+
+0% {
+ transform:translateX(-20%);
+}
+
+100% {
+ transform:translateX(20%);
+}
+
+}
 
     .hero-content {
       max-width: 900px;
@@ -334,7 +372,7 @@
   <!-- AVALEHT -->
 
   <header class="hero" id="avaleht">
-
+<div class="hero-animation"></div>
     <div class="hero-content">
 
      
