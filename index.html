@@ -109,7 +109,7 @@
 
     /* AVALEHT */
 
-  .hero {
+.hero {
   position: relative;
   overflow: hidden;
   min-height: 90vh;
@@ -120,110 +120,128 @@
   padding: 80px 20px;
 
   background:
-    radial-gradient(circle at center,
-    rgba(90, 65, 20, 0.35),
-    rgba(0, 0, 0, 0.95));
+    radial-gradient(
+      circle at center,
+      rgba(90,65,20,0.35),
+      rgba(0,0,0,0.98)
+    );
 }
 
+
+/* KULDSED LIIKUVAD LAINED */
 
 .hero-animation {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:0;
 }
 
-/* Pehme liikuv valgus logo taga */
+
 .hero-animation::before {
-  content: "";
-  position: absolute;
 
-  width: 700px;
-  height: 420px;
+  content:"";
 
-  left: 50%;
-  top: 38%;
+  position:absolute;
 
-  transform: translate(-50%, -50%);
+  width:1200px;
+  height:700px;
+
+  top:50%;
+  left:-70%;
 
   background:
-    radial-gradient(
-      ellipse at center,
-      rgba(212, 175, 55, 0.28) 0%,
-      rgba(212, 175, 55, 0.16) 25%,
-      rgba(212, 175, 55, 0.07) 45%,
-      transparent 72%
+    linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(212,175,55,0.08) 25%,
+      rgba(255,220,120,0.45) 45%,
+      rgba(212,175,55,0.18) 60%,
+      transparent 100%
     );
 
-  filter: blur(25px);
+  filter:blur(45px);
 
-  animation: logoGlow 9s ease-in-out infinite alternate;
+  transform:rotate(-15deg);
+
+  animation:romoraWave 14s ease-in-out infinite;
 }
 
 
-/* Teine nõrgem valgus, mis liigub vastassuunas */
+
 .hero-animation::after {
-  content: "";
-  position: absolute;
 
-  width: 500px;
-  height: 300px;
+  content:"";
 
-  left: 42%;
-  top: 42%;
+  position:absolute;
 
-  transform: translate(-50%, -50%);
+  width:900px;
+  height:500px;
+
+  top:35%;
+  left:-80%;
+
 
   background:
-    radial-gradient(
-      ellipse at center,
-      rgba(255, 210, 80, 0.16) 0%,
-      rgba(212, 175, 55, 0.08) 40%,
-      transparent 70%
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(212,175,55,0.25),
+      transparent
     );
 
-  filter: blur(35px);
 
-  animation: logoGlow2 13s ease-in-out infinite alternate;
-}
+  filter:blur(55px);
 
+  transform:rotate(-15deg);
 
-@keyframes logoGlow {
-
-  0% {
-    transform: translate(-58%, -50%) scale(0.85);
-    opacity: 0.55;
-  }
-
-  50% {
-    transform: translate(-42%, -48%) scale(1.15);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate(-50%, -52%) scale(0.95);
-    opacity: 0.65;
-  }
+  animation:romoraWaveSecond 18s ease-in-out infinite;
 
 }
 
 
-@keyframes logoGlow2 {
+
+@keyframes romoraWave {
 
   0% {
-    transform: translate(-40%, -52%) scale(0.9);
-    opacity: 0.35;
+    transform:translateX(0) rotate(-15deg);
+    opacity:0.2;
   }
+
 
   50% {
-    transform: translate(-55%, -45%) scale(1.2);
-    opacity: 0.7;
+    transform:translateX(140%) rotate(-15deg);
+    opacity:1;
   }
 
+
   100% {
-    transform: translate(-45%, -50%) scale(0.9);
-    opacity: 0.4;
+    transform:translateX(280%) rotate(-15deg);
+    opacity:0.2;
+  }
+
+}
+
+
+
+@keyframes romoraWaveSecond {
+
+  0% {
+    transform:translateX(0) rotate(-15deg);
+    opacity:0.1;
+  }
+
+
+  50% {
+    transform:translateX(180%) rotate(-15deg);
+    opacity:0.6;
+  }
+
+
+  100% {
+    transform:translateX(360%) rotate(-15deg);
+    opacity:0.1;
   }
 
 }
