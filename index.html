@@ -134,87 +134,99 @@
   z-index: 0;
 }
 
-/* Peamine kuldne valguslaine */
+/* Pehme liikuv valgus logo taga */
 .hero-animation::before {
   content: "";
   position: absolute;
-  top: -20%;
-  left: -45%;
-  width: 65%;
-  height: 140%;
 
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(212, 175, 55, 0.03) 20%,
-    rgba(212, 175, 55, 0.18) 45%,
-    rgba(255, 220, 100, 0.28) 50%,
-    rgba(212, 175, 55, 0.12) 58%,
-    rgba(212, 175, 55, 0.02) 78%,
-    transparent 100%
-  );
+  width: 700px;
+  height: 420px;
 
-  filter: blur(28px);
-  transform: rotate(-8deg);
-  animation: goldenWave 10s ease-in-out infinite;
+  left: 50%;
+  top: 38%;
+
+  transform: translate(-50%, -50%);
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(212, 175, 55, 0.28) 0%,
+      rgba(212, 175, 55, 0.16) 25%,
+      rgba(212, 175, 55, 0.07) 45%,
+      transparent 72%
+    );
+
+  filter: blur(25px);
+
+  animation: logoGlow 9s ease-in-out infinite alternate;
 }
 
-/* Teine väga nõrk laine */
+
+/* Teine nõrgem valgus, mis liigub vastassuunas */
 .hero-animation::after {
   content: "";
   position: absolute;
-  top: -30%;
-  left: -60%;
-  width: 45%;
-  height: 160%;
 
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(212, 175, 55, 0.10),
-    transparent
-  );
+  width: 500px;
+  height: 300px;
+
+  left: 42%;
+  top: 42%;
+
+  transform: translate(-50%, -50%);
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255, 210, 80, 0.16) 0%,
+      rgba(212, 175, 55, 0.08) 40%,
+      transparent 70%
+    );
 
   filter: blur(35px);
-  transform: rotate(-8deg);
 
-  animation: goldenWave2 15s ease-in-out infinite;
+  animation: logoGlow2 13s ease-in-out infinite alternate;
 }
 
 
-@keyframes goldenWave {
+@keyframes logoGlow {
 
   0% {
-    transform: translateX(0) rotate(-8deg);
+    transform: translate(-58%, -50%) scale(0.85);
+    opacity: 0.55;
   }
 
   50% {
-    transform: translateX(150%) rotate(-8deg);
+    transform: translate(-42%, -48%) scale(1.15);
+    opacity: 1;
   }
 
   100% {
-    transform: translateX(300%) rotate(-8deg);
+    transform: translate(-50%, -52%) scale(0.95);
+    opacity: 0.65;
   }
 
 }
 
 
-@keyframes goldenWave2 {
+@keyframes logoGlow2 {
 
+  0% {
+    transform: translate(-40%, -52%) scale(0.9);
+    opacity: 0.35;
+  }
 
+  50% {
+    transform: translate(-55%, -45%) scale(1.2);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translate(-45%, -50%) scale(0.9);
+    opacity: 0.4;
+  }
 
 }
-
-0% {
- transform:translateX(-20%);
-}
-
-100% {
- transform:translateX(20%);
-}
-
-}
-
     .hero-content {
       max-width: 900px;
     }
