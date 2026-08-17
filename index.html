@@ -346,11 +346,64 @@ h1 {
         letter-spacing: 6px;
       }
 
-      .subtitle {
-        letter-spacing: 4px;
-        font-size: 16px;
-      }
+      
     }
+      .subtitle {
+    letter-spacing: 4px;
+    font-size: 16px;
+  }
+}
+
+
+/* SIIT ALGAB KOOSTÖÖPARTNERITE CSS */
+
+.partner-logos {
+  max-width: 1100px;
+  margin: 45px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+
+.partner-logo {
+  width: 210px;
+  height: 110px;
+  object-fit: contain;
+  padding: 20px 30px;
+  background: #111;
+  border: 1px solid #55431e;
+  transition: 0.3s;
+}
+
+.partner-logo:hover {
+  border-color: #d4af37;
+  transform: translateY(-4px);
+}
+
+.partner-storytel {
+  width: 210px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  border: 1px solid #55431e;
+  color: #d4af37;
+  font-family: Arial, sans-serif;
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.partner-storytel:hover {
+  border-color: #d4af37;
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(212,175,55,0.12);
+}
  /* RAAMATU SUURVAATE KUJUNDUS */
 
 #bookViewer {
@@ -725,6 +778,10 @@ class="book-cover"
     <img src="edrk_logo.png"
          alt="Eesti Digiraamatute Keskus"
          class="partner-logo">
+ <div class="partner-storytel">
+    STORYTEL
+  </div>
+
 
   </div>
 
